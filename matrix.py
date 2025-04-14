@@ -13,12 +13,16 @@ matrix2 = [
     [12,65,76,86,43]
 ]
 
-result = [[0 for _ in range(5)] for _ in range(5)]
+result = []
 
-for a in range(5):
-    for b in range(5):
-        for k in range(5):
-            result[a][b] += matrix[a][k] * matrix[k][b]
+for k in range(5):
+    baris = []
+    for j in range(5):
+        total = 0
+        for z in range(5):
+            total += matrix[k][z] * matrix2[z][j]
+        baris.append(total)
+    result.append(baris)
 
 for row in result:
     print(row)
